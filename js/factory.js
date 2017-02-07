@@ -5,7 +5,6 @@ angular.module('GamesService', [])
 			$http.get('http://localhost:9000/getInfo')
 			.success(function(response) {
 				console.log(response)
-				return response
 			});
 		}
 		return {

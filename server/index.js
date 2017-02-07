@@ -1,16 +1,22 @@
 var http = require('http');
-var express = require('express')
+var express = require('express');
 var request = require('request');
-var server = http.createServer(); 
 var api_key = "be78ab7bb822bf90173073ba3336431b403e1ce5";
 var query = "kingdom";
 var format = "jsonp";
+var app = express()
+
+app.listen(9000)
+
+app.get('/getInfo', function (req, res) {
+  return request(options, callback);
+})
+
 var options = {
 	url: 'http://api.giantbomb.com/search/?api_key=' + api_key + '&format=json&query=' + query +"&resources=game",
 	headers: {
 		'User-Agent': 'request'
 	}
-
 }
 
 function callback(error, response, body) {
@@ -19,9 +25,9 @@ function callback(error, response, body) {
 	console.log(info);
 	console.log("FUCK U")
 }
-request(options, callback);
 
-server.listen(8080)
+
+
 
 // var request = require('request');
 

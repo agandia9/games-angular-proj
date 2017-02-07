@@ -1,14 +1,27 @@
 angular.module('GamesService', [])
-.factory('GamesFactory', function($http) {
+	.config(function($httpProvider){
+	    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+	})
+	.factory('GamesFactory', function($http) {
 		//var apiKey = 'be78ab7bb822bf90173073ba3336431b403e1ce5'
 		// https://docs.angularjs.org/api/ng/service/$http#usage
-		function getGames() {
+		var apiCall = function() {
 			console.log("HEY! welcome to factory")
-
-			return $http.jsonp("http://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=JSON_CALLBACK")
-				.success(function(data){
-				console.log(data.found);
-			});
+		// .config(function($httpProvider){
+		//     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+			return $http({
+				api_key: "be78ab7bb822bf90173073ba3336431b403e1ce5",
+    			url: 'http://api.giantbomb.com/search/', 
+    			method: "GET",
+    			params: {
+    				api_key: "be78ab7bb822bf90173073ba3336431b403e1ce5",
+					query: "kingdom",
+					format: "jsonp",
+					json_callback: "getGames",
+					resources: "game"
+				}
+ 			});
+			
 			// return $http(
 		// {
 		// 	method: "GET",
@@ -26,6 +39,6 @@ angular.module('GamesService', [])
 			
 		}
 		return {
-				getGames: getGames
+				getGames: apiCall
 			}
 	})

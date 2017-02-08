@@ -5,19 +5,15 @@ app.controller('MainController', function($scope) {
 });
 
 app.controller('DataController', function($scope, GamesFactory) {
-	
 	$scope.games = function() {
-				$scope.getNames = [];
 				$scope.gamesInfo = GamesFactory.getGames()
 					.then(function(response) {
 						console.log(response.data.results)
-						for (var i = 0; i < response.data.results.length; i++) {
-							$scope.getNames.push(response.data.results[i].name)
-							$scope.getNames.join(' - ')
-						};
+						$scope.gamesInfo = response.data.results
+
 					})
 					.catch(function(response) {
-						console.log(":)")
+						console.log("")
 						console.log(response.data);
 					});
 				}

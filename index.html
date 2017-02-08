@@ -17,10 +17,15 @@
 	</div>
 	<div ng-controller="DataController">
 		<p class="lead">
+			<input type="text" ng-model="gameToSearch"></input>
 			<a ng-click="games()" type="button" class="btn btn-primary btn-lg" role="button">Get Games
 			</a>
 		</p>
-		{{getNames}}
+		<div class="gamesBox pull-left" ng-repeat="gamesObj in gamesInfo"><h3>Title: {{gamesObj.name}}</h3>
+			<p>{{gamesObj.deck}}</p>
+			<button class ="btn" value="{{gamesObj.id}}">More info</button>
+		</div>
+
 	</div>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>

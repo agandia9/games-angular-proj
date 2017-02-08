@@ -7,13 +7,12 @@ app.controller('MainController', function($scope) {
 app.controller('DataController', function($scope, GamesFactory) {
 
 	$scope.games = function() {
-				GamesFactory.getGames()
-					// .then(function(response) {
-					// 	$scope.gamesInfo = response.data;
-					// 	console.log($scope.gamesInfo)
-					// }).catch(function(response) {
-					// 	console.log(response);
-					// });
+				$scope.gamesInfo = GamesFactory.getGames()
+					.then(function(response) {
+						console.log(response)
+					}).catch(function(response) {
+						console.log(response);
+					});
 				}
 
 });

@@ -8,15 +8,7 @@ var cors = require('cors')
 var app = express()
 app.use(cors())
 
-//listen on....
-app.listen(9000)
-// when localhost:9000/getInfo....
-app.get('/getInfo', function (req, res) {
-	var getInfoGames = request(options, callback)
-	res.json(getInfoGames)
-})
-
-//Options for query to api
+//Options required for request to API 
 var options = {
 	url: 'http://api.giantbomb.com/search/?api_key=' + api_key + '&format=json&query=' + query +"&resources=game",
 	headers: {
@@ -24,9 +16,14 @@ var options = {
 	}
 }
 
-// callback function that receive data and parse it...
-function callback(error, response, body) {
-	var response = JSON.parse(body);
-	console.log("Receive data and parse ok")
-	return response
-}
+// endpoint api 
+app.get('/getInfo', function (req, res) {
+
+	request(options, function(_, _, body) {
+		res.json( JSON.parse(body) )
+	})
+
+})
+
+//listen on....
+app.listen(9000)

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/agandia9/games-angular-proj/issues"
   },
-  "homepage": "https://github.com/agandia9/games-angular-proj#readme"
+  "homepage": "https://github.com/agandia9/games-angular-proj#readme",
+  "dependencies": {
+    "cors": "^2.8.1"
+  }
 }

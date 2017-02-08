@@ -18,7 +18,6 @@ var options = {
 
 // endpoint api 
 app.get('/getInfo', function (req, res) {
-
 	request(options, function(_, _, body) {
 		res.json( JSON.parse(body) )
 	})

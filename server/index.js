@@ -4,7 +4,7 @@ var request = require('request');
 var api_key = "be78ab7bb822bf90173073ba3336431b403e1ce5";
 var format = "jsonp";
 var cors = require('cors')
-var body = require('body-parser')
+var bodyParser = require('body-parser')
 var app = express()
 app.use(cors())
 
@@ -20,10 +20,12 @@ app.use(cors())
 // 	return opt;
 // }
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.post('/getInfo',function(req,res){
-    var test = req.body.gameToPost;
-    console.log(test)
+    var gameTitle = JSON.stringify(request.body.gameTitle);
+    console.log(gameTitle)
 });
 
 

@@ -1,13 +1,19 @@
 angular.module('GamesService', [])
 	.factory('GamesFactory', function($http) {
-		var getGames = function() {
-			console.log("HEY! welcome to factory")
-			return $http.get('http://localhost:9000/getInfo')
-			.success(function(response) {
-				console.log("data received! - factory")
-			});
+		var getGames = function(gameTitle) {
+			console.log("From Factory we recived => " + gameTitle)
+			return $http.post('http://localhost:9000/getInfo', { gameToPost: gameTitle })
+				.success(function(data) {
+					// $http.get('http://localhost:9000/getInfo')
+					// 	.success(function(response) {
+					// 		console.log("data received! - factory")
+					// 	});
+				})
+				.error(function(data) {
+					console.log('Error: ' + data);
+				});
 		}
 		return {
-				getGames: getGames
-			}
+			getGames: getGames
+		}
 	})

@@ -4,10 +4,7 @@ angular.module('GamesService', [])
 			console.log("From Factory we recived => " + gameTitle)
 			return $http.post('http://localhost:9000/getInfo', {"gameTitle":gameTitle} )
 				.success(function(data) {
-					// $http.get('http://localhost:9000/getInfo')
-						// .success(function(response) {
-							console.log(data + " data received! - factory")
-						// });
+					console.log(data)
 				})
 				.error(function(data) {
 					console.log('Error: ' + data);

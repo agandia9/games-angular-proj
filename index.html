@@ -32,7 +32,7 @@
 		<div class="wrapper">
 		<div class="generalGamesBox container">
 			<div class="gamesBox" ng-repeat="gamesObj in gamesInfo">
-				<h3>Title: {{gamesObj.name}} 
+				<h3>🎮 Title: {{gamesObj.name}} 
 					<small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> - {{platforms.abbreviation}}</small></h3>
 				<p>{{gamesObj.deck}}</p>
 				<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
@@ -50,7 +50,7 @@
 					</div>
 					<div class="modal-body">
 						<p>{{infoAboutGames.deck}}</p>
-						<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> {{genre.name}}</small></p>
+						<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
 						<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
 						<ul class="similarGames"> <p>Similar Games:</p>
 							<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>

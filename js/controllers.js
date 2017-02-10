@@ -16,7 +16,6 @@ app.controller('DataController', function($scope, GamesFactory) {
 						console.log(response.data);
 					});
 				}
-
 	$scope.gameMoreInfo = function(gameId){
 		$scope.gameId = gameId
 		console.log($scope.gameId)
@@ -26,6 +25,5 @@ app.controller('DataController', function($scope, GamesFactory) {
 			$scope.infoAboutGames = response.data.results
 		});
 	}
-
 });
 

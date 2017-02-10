@@ -1,9 +1,12 @@
 * {
 	font-family: 'Quicksand';
 }
-.modal-header,  .modal-footer{
+
+.modal-header,
+.modal-footer {
 	background-color: #78caed;
 }
+
 .wrapper {
 	background: #EFEFEF;
 	box-shadow: 1px 1px 10px #999;
@@ -16,16 +19,18 @@
 	padding-top: 5px;
 	height: auto;
 }
-.similarGames{
-	    display: inline-block;
-	    list-style-type: none;
-	    font-size: 13px;
+
+.similarGames {
+	display: inline-block;
+	list-style-type: none;
+	font-size: 13px;
 }
+
 h3 {
 	white-space: initial;
 }
 
-.formSearch{
+.formSearch {
 	margin-left: 20px;
 }
 
@@ -49,10 +54,10 @@ h3 {
 	display: inline-table;
 }
 
-.buttonsearch{
+.buttonsearch {
 	position: absolute;
-bottom: 20px;
-margin-bottom: 8px;
+	bottom: 20px;
+	margin-bottom: 8px;
 }
 
 p {
@@ -63,7 +68,6 @@ img {
 	height: 315px;
 	width: 250px;
 	justify-content: flex-start;
-
 }
 
 blockquote {

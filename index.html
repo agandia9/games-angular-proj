@@ -39,6 +39,7 @@
 			</div>
 		</div>
 	</div>
+
 		<!-- Modal -->
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -50,6 +51,7 @@
 					</div>
 					<div class="modal-body">
 						<p>{{infoAboutGames.deck}}</p>
+						<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
 						<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
 						<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
 						<ul class="similarGames"> <p>Similar Games:</p>

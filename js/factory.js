@@ -16,7 +16,6 @@ angular.module('GamesService', [])
 				});
 		}
 
-
 		return {
 			getGames: getGames,
 			getInfo: getInfo

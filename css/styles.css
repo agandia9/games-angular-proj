@@ -6,8 +6,8 @@
 .modal-footer {
 	background-color: #78caed;
 }
-
-.wrapper {
+#wrapper {
+	display: none;
 	background: #EFEFEF;
 	box-shadow: 1px 1px 10px #999;
 	margin: auto;
@@ -42,7 +42,9 @@ h3 {
 	white-space: nowrap;
 	position: relative;
 }
-
+.gamesBox:hover{
+	background-color: #95d2ed;
+}
 .gamesBox {
 	background-color: #bfe2f2;
 	width: 270px;
@@ -52,6 +54,7 @@ h3 {
 	cursor: pointer;
 	border-radius: 15px;
 	display: inline-table;
+
 }
 
 .buttonsearch {

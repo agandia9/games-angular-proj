@@ -1,12 +1,13 @@
 var connect = require('connect')
-var http = require('http');
 var express = require('express');
+var app = express()
+var http = require('http');
 var request = require('request');
 var api_key = "be78ab7bb822bf90173073ba3336431b403e1ce5";
 var format = "jsonp";
 var cors = require('cors')
 var bodyParser = require('body-parser')
-var app = express()
+
 app.use(cors())
 
 //Options required for request to API 

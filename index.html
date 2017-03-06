@@ -16,22 +16,24 @@
 
 <body>
 	<div class="jumbotron" ng-controller="MainController">
+		<div class="bg">
 		<h1 class="display-3">{{title}}</h1>
 		<hr class="m-y-md">
 		<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - Shigeru Miyamoto
-			</blockquote>
+		</blockquote>
+		</div>
 	</div>
 	<div ng-controller="DataController">
 		<div class="formSearch">
 			<p class="lead">
 				<input type="text" ng-model="gameTitle"></input>
 				<a ng-click="games()" type="button" class="btn btn-primary btn-lg" role="button">Get Games
-			</a>
-		</p>
+				</a>
+			</p>
 		</div>
-		<div class="wrapper">
+		<div id="wrapper" ng-style="myStyle">
 		<div class="generalGamesBox container">
-			<div class="gamesBox" ng-repeat="gamesObj in gamesInfo">
+			<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-syle="mySecStyle">
 				<h3>🎮 Title: {{gamesObj.name}} 
 					<small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> - {{platforms.abbreviation}}</small></h3>
 				<p>{{gamesObj.deck}}</p>

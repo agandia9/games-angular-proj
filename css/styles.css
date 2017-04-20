@@ -2,10 +2,20 @@
 	font-family: 'Quicksand';
 }
 
+.containerB {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding: 15px;
+	/* margin-bottom: 30px; */
+	color: inherit;
+	background-color: #eee;
+}
+
 .modal-header,
 .modal-footer {
 	background-color: #78caed;
 }
+
 #wrapper {
 	display: none;
 	background: #EFEFEF;
@@ -42,9 +52,11 @@ h3 {
 	white-space: nowrap;
 	position: relative;
 }
-.gamesBox:hover{
+
+.gamesBox:hover {
 	background-color: #95d2ed;
 }
+
 .gamesBox {
 	background-color: #bfe2f2;
 	width: 270px;
@@ -54,7 +66,6 @@ h3 {
 	cursor: pointer;
 	border-radius: 15px;
 	display: inline-table;
-
 }
 
 .buttonsearch {
@@ -100,6 +111,7 @@ blockquote:after {
 .modal-body p {
 	font-size: 19px;
 }
+
 input {
 	text-align: center;
 	height: 50px;

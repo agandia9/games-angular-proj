@@ -7,7 +7,6 @@ angular.module('GamesService', [])
 					console.log('Error: ' + data);
 				});
 		}
-
 		var getInfo = function(gameId){
 			console.log( gameId)
 			return $http.post('http://localhost:9000/getMoreInfo', {"gameId":gameId} )
@@ -15,7 +14,6 @@ angular.module('GamesService', [])
 					console.log('Error: ' + data);
 				});
 		}
-
 		return {
 			getGames: getGames,
 			getInfo: getInfo

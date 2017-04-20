@@ -15,15 +15,14 @@
 </head>
 
 <body>
-	<div class="jumbotron" ng-controller="MainController">
-		<div class="bg">
-		<h1 class="display-3">{{title}}</h1>
-		<hr class="m-y-md">
-		<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - Shigeru Miyamoto
-		</blockquote>
-		</div>
-	</div>
 	<div ng-controller="DataController">
+		<div class="containerB">
+		<div class="bg">
+			<h2 class="display-3">GameStuff 👾</h1>
+			<hr class="m-y-md">
+			<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - <strong>Shigeru Miyamoto</strong>
+			</blockquote>
+		</div>
 		<div class="formSearch">
 			<p class="lead">
 				<input type="text" ng-model="gameTitle"></input>
@@ -31,17 +30,17 @@
 				</a>
 			</p>
 		</div>
+		</div>
 		<div id="wrapper" ng-style="myStyle">
-		<div class="generalGamesBox container">
-			<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-syle="mySecStyle">
-				<h3>🎮 Title: {{gamesObj.name}} 
+			<div class="generalGamesBox container">
+				<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-style="mySecStyle" >
+					<h3>🎮 Title: {{gamesObj.name}} 
 					<small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> - {{platforms.abbreviation}}</small></h3>
-				<p>{{gamesObj.deck}}</p>
-				<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
+					<p>{{gamesObj.deck}}</p>
+					<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
+				</div>
 			</div>
 		</div>
-	</div>
-
 		<!-- Modal -->
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -56,7 +55,8 @@
 						<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
 						<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
 						<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
-						<ul class="similarGames"> <p>Similar Games:</p>
+						<ul class="similarGames">
+							<p>Similar Games:</p>
 							<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>
 						</ul>
 						<p><small>Studio: {{infoAboutGames.developers[0].name}}</small></p>

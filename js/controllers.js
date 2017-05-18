@@ -1,8 +1,6 @@
 var app = angular.module('gameApp')
-
 app.controller('DataController', function($scope, GamesFactory, $location) {
 	$scope.games = function(gameTitle) {
-
 				console.log("from controller.. we search by => " + $scope.gameTitle)
 				$scope.gamesInfo = GamesFactory.getGames($scope.gameTitle)
 					.then(function(response) {
@@ -27,6 +25,11 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 			console.log(response.data.results)
 			$scope.infoAboutGames = response.data.results
 		});
+	}
+
+	$scope.addToFavorite = function(name){
+		$scope.nameToAdd = name
+		console.log('This game for favorite...' + $scope.nameToAdd)
 	}
 });
 

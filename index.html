@@ -4,22 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>GameStuff</title>
-	<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+	<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
 	<script src="node_modules/angular/angular.min.js"></script>
 	<script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link href="favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 
 <body>
+	<div class="wall"></div>
 	<div ng-controller="DataController">
 		<div class="containerB">
 			<div class="bg">
-				<h2 class="display-3">GameStuff 👾</h2>
+				<div class="col-lg-12">
+					<h1 class="display-3">GameStuff 👾</h1>
+					<span class="glyphicon glyphicon-home"><button>Enter</button></span>
+				</div>
 			<hr class="m-y-md">
 			<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - <strong>Shigeru Miyamoto</strong>
 			</blockquote>
@@ -35,7 +39,6 @@
 	<div ng-view></div>
 	</div>
 
-	
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/factory.js"></script>

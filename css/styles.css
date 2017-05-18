@@ -1,14 +1,19 @@
 * {
 	font-family: 'Quicksand';
 }
-
+h1{
+	font-size: 46px;
+}
 .containerB {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding: 15px;
 	/* margin-bottom: 30px; */
 	color: inherit;
-	background-color: #eee;
+}
+
+.containerB blockquote{
+	text-shadow: 2px 2px 1px white;
 }
 
 .modal-header,
@@ -67,6 +72,9 @@ h3 {
 	cursor: pointer;
 	border-radius: 15px;
 	display: inline-table;
+	border-style: solid;
+	border-color: black;
+
 }
 
 .buttonsearch {
@@ -125,4 +133,42 @@ input {
 	outline: 0;
 	background: transparent;
 	border-bottom: 3px solid black;
+}
+.modal-inline{
+	display: flex;
+}
+
+.modal-inline button {
+	background: transparent;
+	border: 0;
+}
+
+.bg div{
+	margin: auto;
+	display: flex;
+}
+.bg span{
+	display: inline-block;
+	margin-left: auto;
+
+}
+.bg span button{
+	background: transparent;
+	border: 0;
+	font-family: 'Quicksand';
+	text-shadow: 2px 2px 1px white;
+	font-size: 20px;
+}
+
+.wall {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity : 0.2;
+	background-image: url("../img/wallpaper.jpg") !important;
+	background-position: center;
+}
+
+.containerB{
+	position: relative;
 }

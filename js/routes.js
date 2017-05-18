@@ -7,5 +7,5 @@ angular.module('gameApp')
 			.when("/error", {
 				templateUrl: 'templates/error.html',
 			})
-
+			.otherwise({ redirectTo: '/' })
 	}]);

@@ -13,7 +13,6 @@ app.controller('DataController', function($scope, GamesFactory) {
 					.catch(function(response) {
 						console.log(response.data);
 					});
-					
 					$scope.mySecStyle={transform: 'rotate(360deg)', transition: 'width 2s, height 2s, transform 2s'}
 				}
 

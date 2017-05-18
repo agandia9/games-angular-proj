@@ -19,6 +19,7 @@ function options(query) {
 			'User-Agent': 'request'
 		}
 	}
+	console.log(opt)
 	return opt;
 }
 
@@ -41,6 +42,7 @@ app.use(bodyParser.json());
 app.post('/getInfo',function(req,res){
     var gameTitle = req.body.gameTitle;
     // endpoint api 
+    console.log(req.body)
 	request(options(gameTitle), function(_, _, body) {
 		res.json( JSON.parse(body) )
 	})
@@ -50,7 +52,6 @@ app.post('/getInfo',function(req,res){
 
 //endpoint
 app.post('/getMoreInfo',function(req,res){
-	console.log("hey llu")
     var gameId = req.body.gameId;
     console.log(gameId)
     // endpoint api 

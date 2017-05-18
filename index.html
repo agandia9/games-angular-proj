@@ -17,11 +17,16 @@
 <body>
 	<div ng-controller="DataController">
 		<div class="containerB">
-		<div class="bg">
-			<h2 class="display-3">GameStuff 👾</h1>
+			<div class="bg">
+				<h2 class="display-3">GameStuff 👾</h2>
 			<hr class="m-y-md">
 			<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - <strong>Shigeru Miyamoto</strong>
 			</blockquote>
+			<div>
+				<form action="#">
+					<input type="text">
+				</form>
+			</div>
 		</div>
 		<div class="formSearch">
 			<p class="lead">
@@ -49,24 +54,24 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h2 class="modal-title">{{infoAboutGames.name}}</h2>
-					</div>
-					<div class="modal-body">
-						<p>{{infoAboutGames.deck}}</p>
-						<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
-						<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
-						<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
-						<ul class="similarGames">
-							<p>Similar Games:</p>
-							<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>
-						</ul>
-						<p><small>Studio: {{infoAboutGames.developers[0].name}}</small></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
+			</div>
+			<div class="modal-body">
+				<p>{{infoAboutGames.deck}}</p>
+				<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
+				<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
+				<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
+				<ul class="similarGames">
+					<p>Similar Games:</p>
+					<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>
+				</ul>
+				<p><small>Studio: {{infoAboutGames.developers[0].name}}</small></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>

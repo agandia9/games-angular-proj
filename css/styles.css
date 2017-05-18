@@ -58,6 +58,7 @@ h3 {
 }
 
 .gamesBox {
+	transform: all .3 linear;
 	background-color: #bfe2f2;
 	width: 270px;
 	height: 380px;

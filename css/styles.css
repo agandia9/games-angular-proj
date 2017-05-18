@@ -74,13 +74,13 @@ h3 {
 	display: inline-table;
 	border-style: solid;
 	border-color: black;
-
 }
 
 .buttonsearch {
 	position: absolute;
 	bottom: 20px;
-	margin-bottom: 8px;
+	margin-bottom: 0;
+    margin-left: 20%;
 }
 
 p {
@@ -141,6 +141,7 @@ input {
 .modal-inline button {
 	background: transparent;
 	border: 0;
+	margin-left: auto;
 }
 
 .bg div{

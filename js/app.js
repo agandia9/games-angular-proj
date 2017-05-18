@@ -1,1 +1,1 @@
-angular.module('gameApp',["GamesService"]);
+angular.module('gameApp',["GamesService","ngRoute"]);

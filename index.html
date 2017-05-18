@@ -7,7 +7,8 @@
 	<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -31,46 +32,14 @@
 			</p>
 		</div>
 		</div>
-		<div id="wrapper" ng-style="myStyle">
-			<div class="generalGamesBox container">
-				<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-style="mySecStyle" >
-					<h3>🎮 Title: {{gamesObj.name}} 
-					<small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> - {{platforms.abbreviation}}</small></h3>
-					<p>{{gamesObj.deck}}</p>
-					<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
-				</div>
-			</div>
-		</div>
-		<!-- Modal -->
-		<div id="myModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h2 class="modal-title">{{infoAboutGames.name}}</h2>
-			</div>
-			<div class="modal-body">
-				<p>{{infoAboutGames.deck}}</p>
-				<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
-				<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
-				<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
-				<ul class="similarGames">
-					<p>Similar Games:</p>
-					<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>
-				</ul>
-				<p><small>Studio: {{infoAboutGames.developers[0].name}}</small></p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
+	<div ng-view></div>
 	</div>
-	</div>
-	</div>
+
+	
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/factory.js"></script>
+	<script src="js/routes.js"></script>
 </body>
 
 </html>

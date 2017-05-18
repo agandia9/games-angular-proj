@@ -73,7 +73,15 @@ h3 {
 	border-radius: 15px;
 	display: inline-table;
 	border-style: solid;
+	    border-top-width: 1px;
+    border-bottom-width: 3px;
+    border-left-width: 1px;
+    border-right-width: 1px;
 	border-color: black;
+}
+
+.gamesBox small{
+	margin-top: 0px ;
 }
 
 .buttonsearch {
@@ -167,7 +175,7 @@ input {
 	width: 100%;
 	opacity : 0.2;
 	background-image: url("../img/wallpaper.jpg") !important;
-	background-position: center;
+	background-position: 100%;
 }
 
 .containerB{

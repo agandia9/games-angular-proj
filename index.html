@@ -34,10 +34,10 @@
 					<a ng-click="games()" type="button" class="btn btn-primary btn-lg" role="button">Get Games
 					</a>
 				</p>
-				<select class="select" ng-model="sortBy">
-					<option value="gamesObj.original_release_date" selected>Year</option>
-					<option value="gamesObj.name">Name</option>
-				</select>
+				<span class="filters">
+					<h3>Order by: </h3>
+					<input type="checkbox" ng-model="year" ng-change="changeSort('original_release_date')" class="checkbox" /> Release Date 
+			</span>
 			</div>
 		</div>
 		<div ng-view></div>

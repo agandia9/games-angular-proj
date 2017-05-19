@@ -137,7 +137,7 @@ blockquote:after {
 	font-size: 19px;
 }
 
-input {
+.lead input {
 	text-align: center;
 	height: 50px;
 	width: 200px;
@@ -150,6 +150,14 @@ input {
 	background: transparent;
 	border-bottom: 3px solid black;
 }
+
+.filters{
+    display: flex;
+    font-size: 17px;
+    padding-left: 70%;
+
+}
+
 .modal-inline{
 	display: flex;
 }

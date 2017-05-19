@@ -1,5 +1,6 @@
 var app = angular.module('gameApp')
 app.controller('DataController', function($scope, GamesFactory, $location) {
+
 	$scope.games = function(gameTitle) {
 		console.log("from controller.. we search by => " + $scope.gameTitle)
 		$scope.gamesInfo = GamesFactory.getGames($scope.gameTitle)
@@ -23,14 +24,11 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 		.then(function(response) {
 			console.log(response.data.results)
 			$scope.infoAboutGames = response.data.results
-
 			for(prop in $scope.infoAboutGames){
 				if (prop === 'genres') {
 					for (var i = 0; i < $scope.infoAboutGames[prop].length; i++) {
-						console.log(`call ${i} times`)
 						$scope.infoAboutGames[prop][i].name = GamesFactory.getIcon($scope.infoAboutGames[prop][i].name)
 					};
-					
 				}
 			}
 		})

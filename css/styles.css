@@ -48,6 +48,11 @@ h3 {
 
 .formSearch {
 	margin-left: 20px;
+	display: inline-flex;
+}
+.formSearch select{
+	height: 30px;
+	margin-left: 10px;
 }
 
 .generalGamesBox {
@@ -74,13 +79,15 @@ h3 {
 	border-radius: 15px;
 	display: inline-table;
 	border-style: solid;
-	    border-top-width: 1px;
-    border-bottom-width: 3px;
-    border-left-width: 1px;
-    border-right-width: 1px;
+	border-top-width: 1px;
+	border-bottom-width: 3px;
+	border-left-width: 1px;
+	border-right-width: 1px;
 	border-color: black;
 }
-
+.gamesBox h3{
+	margin-top:0px;
+}
 .gamesBox small{
 	margin-top: 0px ;
 }
@@ -89,7 +96,7 @@ h3 {
 	position: absolute;
 	bottom: 20px;
 	margin-bottom: 0;
-    margin-left: 20%;
+	margin-left: 20%;
 }
 
 p {

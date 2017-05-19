@@ -1,8 +1,8 @@
 		<div id="wrapper" ng-style="myStyle">
 			<div class="generalGamesBox container">
-				<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-style="mySecStyle" >
-					<h3>Title: {{gamesObj.name}}</h3> 
-					<h3><small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> {{platforms.abbreviation}} -</small></h3>
+				<div class="gamesBox" ng-repeat="gamesObj in gamesInfo | orderBy:sortBy" ng-style="mySecStyle" >
+					<h3>{{gamesObj.name}}</h3> 
+					<h3><small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> {{platforms.abbreviation}}</small></h3>
 						<p>{{gamesObj.deck}}</p>
 						<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
 					</div>

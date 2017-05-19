@@ -24,19 +24,23 @@
 					<h1 class="display-3">GameStuff 👾🎮</h1>
 					<span class="glyphicon glyphicon-home"><button>Enter</button></span>
 				</div>
-			<hr class="m-y-md">
-			<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - <strong>Shigeru Miyamoto</strong>
-			</blockquote>
+				<hr class="m-y-md">
+				<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - <strong>Shigeru Miyamoto</strong>
+				</blockquote>
+			</div>
+			<div class="formSearch">
+				<p class="lead">
+					<input type="text" ng-model="gameTitle"></input>
+					<a ng-click="games()" type="button" class="btn btn-primary btn-lg" role="button">Get Games
+					</a>
+				</p>
+				<select class="select" ng-model="sortBy">
+					<option value="gamesObj.original_release_date" selected>Year</option>
+					<option value="gamesObj.name">Name</option>
+				</select>
+			</div>
 		</div>
-		<div class="formSearch">
-			<p class="lead">
-				<input type="text" ng-model="gameTitle"></input>
-				<a ng-click="games()" type="button" class="btn btn-primary btn-lg" role="button">Get Games
-				</a>
-			</p>
-		</div>
-		</div>
-	<div ng-view></div>
+		<div ng-view></div>
 	</div>
 
 	<script src="js/app.js"></script>

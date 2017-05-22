@@ -1,36 +1,36 @@
-		<div id="wrapper" ng-style="myStyle">
-			<div class="generalGamesBox container">
-				<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-style="mySecStyle" >
-					<h3>{{gamesObj.name}}</h3> 
-					<h3><small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> {{platforms.abbreviation}}</small></h3>
-						<p>{{gamesObj.deck}}</p>
-						<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
-					</div>
-				</div>
+<div id="wrapper" ng-style="myStyle">
+	<div class="generalGamesBox container">
+		<div class="gamesBox" ng-repeat="gamesObj in gamesInfo" ng-style="mySecStyle" >
+			<h3>{{gamesObj.name}}</h3> 
+			<h3><small ng-repeat="platforms in gamesObj.platforms |limitTo: 3"> {{platforms.abbreviation}}</small></h3>
+			<p>{{gamesObj.deck}}</p>
+			<button class="btn buttonsearch" ng-click="gameMoreInfo(gamesObj.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header col-md-12 modal-inline">
+				<h2 class="modal-title col-md-9">{{infoAboutGames.name}}</h2>
+				<button class="col-md-3 glyphicon glyphicon-heart-empty" ng-click="addToFavorite(infoAboutGames.name)"></button>
 			</div>
-			<!-- Modal -->
-			<div id="myModal" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header col-md-12 modal-inline">
-							<h2 class="modal-title col-md-9">{{infoAboutGames.name}}</h2>
-							<button class="col-md-3 glyphicon glyphicon-heart-empty" ng-click="addToFavorite(infoAboutGames.name)"></button>
-						</div>
-						<div class="modal-body">
-							<p>{{infoAboutGames.deck}}</p>
-							<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
-							<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
-							<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
-							<ul class="similarGames">
-								<p>Similar Games:</p>
-								<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>
-							</ul>
-							<p><small>Studio: {{infoAboutGames.developers[0].name}}</small></p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
+			<div class="modal-body">
+				<p>{{infoAboutGames.deck}}</p>
+				<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
+				<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
+				<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
+				<ul class="similarGames">
+					<p>Similar Games:</p>
+					<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>
+				</ul>
+				<p><small>Studio: {{infoAboutGames.developers[0].name}}</small></p>
 			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

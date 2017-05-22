@@ -183,7 +183,12 @@ blockquote:after {
 	text-shadow: 2px 2px 1px white;
 	font-size: 20px;
 }
-
+.btn-group{
+	display: flex;
+}
+.dropdown-menu{
+	
+}
 .wall {
 	position: absolute;
 	height: 100%;

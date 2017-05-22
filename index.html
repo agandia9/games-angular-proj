@@ -35,9 +35,17 @@
 					</a>
 				</p>
 				<span class="filters">
-					<h3>Order by: </h3>
-					<input type="checkbox" ng-model="year" ng-change="changeSort('original_release_date')" class="checkbox" /> Release Date 
-			</span>
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary">Order By: </button>
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a ng-click="changeSort('original_release_date')">release date</a></li>
+							<li><a href="#">Smartphone</a></li>
+						</ul>
+					</div>
+				</span>
 			</div>
 		</div>
 		<div ng-view></div>

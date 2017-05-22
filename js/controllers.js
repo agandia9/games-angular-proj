@@ -48,11 +48,11 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 	$scope.changeSort = function(sort){
 		function compare(a,b) {
 			if(sort === 'original_release_date')
-			  if ((a.original_release_date).substring(0, 4) < (b.original_release_date).substring(0, 4))
-			    return -1;
-			  if ((a.original_release_date).substring(0, 4) > (b.original_release_date).substring(0, 4))
-			    return 1;
-			  return 0;
+				if ((a.original_release_date).substring(0, 4) < (b.original_release_date).substring(0, 4))
+					return -1;
+				if ((a.original_release_date).substring(0, 4) > (b.original_release_date).substring(0, 4))
+					return 1;
+				return 0;
 			}
 		$scope.gamesInfo=$scope.gamesInfo.sort(compare);
 		return $scope.gamesInfo

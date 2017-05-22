@@ -1,24 +1,16 @@
 angular.module('GamesService', [])
 .factory('GamesFactory', function($http, $location) {
 	var getGames = function(gameTitle) {
-		console.log("From Factory we recived => " + gameTitle)
 		return $http.post('http://localhost:9000/getInfo', {"gameTitle":gameTitle} )
-				//now works because angular version...
-				// .error(function(data) {
-				// 	console.log('Error: ' + data);
-				// });
-
 				.then(function(data){return data},function() {
+					$scope.errormsg = 'connection refused'
 					$location.path('/error');
 				})
 			}
 			var getInfo = function(gameId){
-				console.log( gameId)
 				return $http.post('http://localhost:9000/getMoreInfo', {"gameId":gameId} )
-				// .error(function(data) {
-				// 	console.log('Error: ' + data);
-				// });
 				.then(function(data){return data},function() {
+					$scope.errormsg = 'connection refused'
 					$location.path('/error');
 				})
 			}
@@ -81,7 +73,6 @@ angular.module('GamesService', [])
 				else if(infoAboutGames === 'Music/Rhythm'){
 					return `🎵🎤 ${infoAboutGames}`
 				}
-				
 				else {
 					return `⁉️  ${infoAboutGames}`
 				}

@@ -7,6 +7,7 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 		.then(function(response) {
 			console.log(response.data.results[0])
 			if (typeof response.data.results[0] == 'undefined') {
+				$scope.errormsg = 'Game not found'
 				$location.url("/error")
 			}else{
 				$location.url("/games")

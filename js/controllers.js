@@ -5,10 +5,15 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 		console.log("from controller.. we search by => " + $scope.gameTitle)
 		$scope.gamesInfo = GamesFactory.getGames($scope.gameTitle)
 		.then(function(response) {
-			$location.url("/games")
-			console.log(response.data.results)
-			$scope.gamesInfo = response.data.results
-			$scope.myStyle={display:'inline'}
+			console.log(response.data.results[0])
+			if (typeof response.data.results[0] == 'undefined') {
+				$location.url("/error")
+			}else{
+				$location.url("/games")
+				console.log(response.data.results)
+				$scope.gamesInfo = response.data.results
+				$scope.myStyle={display:'inline'}
+			}
 		})
 		.catch(function(response) {
 			console.log(response.data);

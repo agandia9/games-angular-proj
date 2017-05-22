@@ -7,6 +7,10 @@ angular.module('GamesService', [])
 				// .error(function(data) {
 				// 	console.log('Error: ' + data);
 				// });
+
+				.then(function(data){return data},function() {
+					$location.path('/error');
+				})
 			}
 			var getInfo = function(gameId){
 				console.log( gameId)
@@ -14,6 +18,9 @@ angular.module('GamesService', [])
 				// .error(function(data) {
 				// 	console.log('Error: ' + data);
 				// });
+				.then(function(data){return data},function() {
+					$location.path('/error');
+				})
 			}
 			var getIcon = function(infoAboutGames){
 				console.log(infoAboutGames)

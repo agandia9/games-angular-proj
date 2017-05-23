@@ -92,6 +92,26 @@ h3 {
 	margin-top: 0px ;
 }
 
+.relGamesBox{
+		transform: all .3 linear;
+	background-color: #bfe2f2;
+	width: 270px;
+	height: 200px;
+	margin: 8px;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: 15px;
+	display: inline-table;
+	border-style: solid;
+	border-top-width: 1px;
+	border-bottom-width: 3px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-color: black;
+}
+.relGamesBox h3{
+	margin-top:0px;
+}
 .buttonsearch {
 	position: absolute;
 	bottom: 20px;
@@ -200,4 +220,19 @@ blockquote:after {
 
 .containerB{
 	position: relative;
+}
+.similarGames input{
+	 background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+.franchiseGames input{
+	background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+.franchiseGames li{
+	list-style-type: none;
 }

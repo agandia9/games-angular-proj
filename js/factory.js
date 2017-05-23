@@ -7,14 +7,21 @@ angular.module('GamesService', [])
 					$location.path('/error');
 				})
 			}
-			var getInfo = function(gameId){
+	var getInfo = function(gameId){
 				return $http.post('http://localhost:9000/getMoreInfo', {"gameId":gameId} )
 				.then(function(data){return data},function() {
 					$scope.errormsg = 'connection refused'
 					$location.path('/error');
 				})
 			}
-			var getIcon = function(infoAboutGames){
+	var getRelacionatedGames = function(url_games){
+		return $http.post('http://localhost:9000/getRelacionatedGames', {"url_games":url_games} )
+				.then(function(data){return data},function() {
+					$scope.errormsg = 'connection refused'
+					$location.path('/error');
+				})
+	}
+	var getIcon = function(infoAboutGames){
 				console.log(infoAboutGames)
 				if(infoAboutGames === 'Driving/Racing'){
 					return `🏎 ${infoAboutGames}`
@@ -78,6 +85,7 @@ angular.module('GamesService', [])
 				}
 			}
 			return {
+				getRelacionatedGames: getRelacionatedGames,
 				getIcon: getIcon,
 				getGames: getGames,
 				getInfo: getInfo

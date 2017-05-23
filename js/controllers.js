@@ -57,5 +57,11 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 		$scope.gamesInfo=$scope.gamesInfo.sort(compare);
 		return $scope.gamesInfo
 	}
+	$scope.getList = function(detail_url){
+		$scope.relacionatedGames = GamesFactory.getRelacionatedGames(detail_url)
+		.then(function(response) {
+			console.log(response.data.results)
+		})
+	}
 });
 

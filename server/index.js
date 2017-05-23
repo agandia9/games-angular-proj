@@ -60,6 +60,15 @@ app.post('/getMoreInfo',function(req,res){
 	})
 })
 
+app.post('/getRelacionatedGames',function(req,res){
+    var url_games = req.body.url_games;
+    console.log(opt(url_games))
+    // endpoint api 
+	request(opt(url_games), function(_, _, body) {
+		res.json( JSON.parse(body) )
+	})
+})
+
 
 //listen on....
 app.listen(9000)

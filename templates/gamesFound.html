@@ -14,14 +14,20 @@
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header col-md-12 modal-inline">
-				<h2 class="modal-title col-md-9">{{infoAboutGames.name}}</h2>
+				<h2 class="modal-title col-md-9">{{infoAboutGames.name}} <small> {{infoAboutGames.publishers[0].name}}</small></h2>
 				<button class="col-md-3 glyphicon glyphicon-heart-empty" ng-click="addToFavorite(infoAboutGames.name)"></button>
 			</div>
 			<div class="modal-body">
 				<p>{{infoAboutGames.deck}}</p>
 				<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
 				<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
+				<p >Franchise: 
+					<ul>
+						<li ng-repeat=" franchise in infoAboutGames.franchises"> <small> {{franchise.name}} <input type="button" ng-click="getList(franchise.api_detail_url)" value="Relacionated games"> </small>
+					</li>
+				</p>
 				<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
+
 				<ul class="similarGames">
 					<p>Similar Games:</p>
 					<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">{{similarGames.name}}</li>

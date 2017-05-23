@@ -60,7 +60,15 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 	$scope.getList = function(detail_url){
 		$scope.relacionatedGames = GamesFactory.getRelacionatedGames(detail_url)
 		.then(function(response) {
-			console.log(response.data.results)
+			$scope.relacionatedGames = response.data.results
+			$scope.numberOfGames = function(){
+				for(prop in response.data.results)
+					if (prop === 'games') {
+						return response.data.results[prop].length
+					}
+			}
+			console.log($scope.relacionatedGames)
+			$location.url('/relacionatedGames')
 		})
 	}
 });

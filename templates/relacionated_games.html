@@ -1,0 +1,11 @@
+<div id="wrapper" ng-style="myStyle">
+	<h3>Filtered by: {{relacionatedGames.name}}</h3>
+	<h4>Items found: {{numberOfGames()}}</h4>
+	<p>{{relacionatedGames.deck}}</p>
+	<div class="generalGamesBox container" >
+		<div class="gamesBox" ng-style="mySecStyle" ng-repeat="relacionated in relacionatedGames.games" >
+			<h3>{{relacionated.name}}</h3>
+			<button class="btn buttonsearch" ng-click="gameMoreInfo(relacionated.api_detail_url)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More info</button>
+		</div>
+	</div>
+</div>

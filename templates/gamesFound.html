@@ -23,7 +23,7 @@
 				<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
 				<p >Franchise: 
 					<ul>
-						<li ng-repeat=" franchise in infoAboutGames.franchises"> <small> {{franchise.name}} <input type="button" ng-click="getList(franchise.api_detail_url)" value="Relacionated games"> </small>
+						<li ng-repeat=" franchise in infoAboutGames.franchises"> <small> {{franchise.name}} <input type="button" ng-click="getList(franchise.api_detail_url)" value="Relacionated games" data-dismiss="modal"> </small>
 					</li>
 				</p>
 				<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>

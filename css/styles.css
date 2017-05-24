@@ -227,6 +227,9 @@ blockquote:after {
     margin:0;
     padding:0;
 }
+.franchiseGames{
+	padding: 0;
+}
 .franchiseGames input{
 	background:none;
     border:none;

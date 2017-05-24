@@ -18,6 +18,9 @@
 				<button class="col-md-3 glyphicon glyphicon-heart-empty" ng-click="addToFavorite(infoAboutGames.name)"></button>
 			</div>
 			<div class="modal-body">
+				<h3>
+					<small ng-repeat="plat in infoAboutGames.platforms">{{plat.name}} - </small>
+				</h3>
 				<p>{{infoAboutGames.deck}}</p>
 				<p>Release Date: {{infoAboutGames.original_release_date | limitTo: 10 }}</p>
 				<p>Genres: <small ng-repeat=" genre in infoAboutGames.genres | limitTo: 3"> - {{genre.name}}</small></p>
@@ -25,9 +28,10 @@
 					<ul class="franchiseGames">
 						<li ng-repeat=" franchise in infoAboutGames.franchises"> 
 						<input type="button" ng-click="getList(franchise.api_detail_url)" value="{{franchise.name}}" data-dismiss="modal"></li>
+					</ul>
 				</p>
 				<img src="{{infoAboutGames.image.small_url}}" alt="Cover game"></img>
-
+		
 				<ul class="similarGames">
 					<p>Similar Games:</p>
 					<li ng-repeat="similarGames in infoAboutGames.similar_games | limitTo: 8">

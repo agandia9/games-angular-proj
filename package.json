@@ -25,7 +25,8 @@
     "cors": "^2.8.1",
     "devtool": "^2.3.1",
     "express": "^4.15.3",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "mongodb": "^2.2.27"
   },
   "devDependencies": {},
   "description": ""

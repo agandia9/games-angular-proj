@@ -71,5 +71,9 @@ app.controller('DataController', function($scope, GamesFactory, $location) {
 			$location.url('/relacionatedGames')
 		})
 	}
+
+	$scope.login = function(name, pass){
+		console.log(name + ', ' +pass)
+	}
 });
 

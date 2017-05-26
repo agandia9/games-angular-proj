@@ -7,6 +7,8 @@ var api_key = "be78ab7bb822bf90173073ba3336431b403e1ce5";
 var format = "jsonp";
 var cors = require('cors')
 var bodyParser = require('body-parser')
+var mongo = require('mongodb')
+var db = mongo('localhost:27017/logins');
 
 app.use(cors())
 

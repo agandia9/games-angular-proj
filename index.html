@@ -22,8 +22,27 @@
 			<div class="bg">
 				<div class="col-lg-12">
 					<h1 class="display-3">GameStuff 👾🎮</h1>
-					<span class="glyphicon glyphicon-home"><button>Enter</button></span>
+					<span class="glyphicon glyphicon-home"><button href="#" data-toggle="modal" data-target="#login-modal">Enter</button></span>
 				</div>
+
+				<!-- LOGIN MODAL -->
+				<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog">
+						<div class="loginmodal-container">
+							<h1>Login to Your Account</h1><br>
+							<form>
+								<input type="text" ng-model="user" placeholder="Username">
+								<input type="password" ng-model="pass" placeholder="Password">
+								<input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login(user, pass)">
+							</form>
+							<div class="login-help">
+								<a href="#">Register</a> - <a href="#">Forgot Password</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
 				<hr class="m-y-md">
 				<blockquote>The obvious objective of video games is to entertain people by surprising them with new experiences. - <strong>Shigeru Miyamoto</strong>
 				</blockquote>
@@ -50,6 +69,7 @@
 		</div>
 		<div ng-view></div>
 	</div>
+
 
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>

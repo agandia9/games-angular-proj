@@ -2,7 +2,11 @@
 	font-family: 'Quicksand';
 }
 h1{
-	font-size: 46px;
+	font-size: 52px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .loginmodal-container {
@@ -186,6 +190,8 @@ h3 {
 .gamesBox small{
 	margin-top: 0px ;
 }
+
+
 
 .relGamesBox{
 		transform: all .3 linear;
